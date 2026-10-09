@@ -22,7 +22,7 @@ missing_ratio = df.isnull().mean()
 df = df.loc[:, missing_ratio < 0.3]
 
 # Eksik değerleri ileri/geri doldurma
-df = df.fillna(method="ffill").fillna(method="bfill")
+df = df.ffill().bfill()
 
 
 # Hedef ve Öznitelikler
